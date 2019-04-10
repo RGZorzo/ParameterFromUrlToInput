@@ -1,8 +1,14 @@
- jQuery(document).ready(function(){
+//Name of the parameter comming from URL string ej "&param=3 => param"
+var nameOfParam = 'p';
+//Element input whose value we wanna set with parameters value
+var input = jQuery('#traffic-source-form-input');
+
+
+jQuery(document).ready(function(){
 	if(jQuery('#traffic-source-form-input').length){
-		var trafficSourceParameter = GetURLParameter('p');
+		var trafficSourceParameter = GetURLParameter(nameOfParam);
 		if(trafficSourceParameter !== false){
-			jQuery('#traffic-source-form-input').val(trafficSourceParameter);
+			input.val(trafficSourceParameter);
 		}
 	}
 });
